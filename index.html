@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bellanuts | Dry Fruits & Dates</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- WELCOME SCREEN -->
+    <section id="welcomePage" class="page welcome-page">
+
+        <div class="brand-logo">
+            <span>♛</span>
+            <b>B</b>
+        </div>
+
+        <h1>BELLANUTS</h1>
+
+        <h3>DRY FRUITS & DATES</h3>
+        <h3>GIFT HAMPER</h3>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Premium Dry Fruits.<br>
+            Perfectly Gifted.
+        </p>
+
+        <div class="gift-icon">🎁</div>
+
+        <button class="welcome-btn" onclick="openHome()">
+            WELCOME <span>→</span>
+        </button>
+
+        <div class="dots">
+            <i class="active"></i>
+            <i></i>
+            <i></i>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN APP -->
+    <section id="appPage" class="page app-page hidden">
+
+        <!-- HEADER -->
+        <header>
+
+            <button class="icon-btn" onclick="openMenu()">☰</button>
+
+            <div class="logo">
+                BELLANUTS
+                <small>DRY FRUITS & DATES</small>
+            </div>
+
+            <button class="cart-btn" onclick="showPage('cartPage')">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+
+        </header>
+
+
+        <!-- HOME PAGE -->
+        <main id="homePage">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for hampers, nuts, dates..."
+                    oninput="searchProducts()"
+                >
+
+                <span>⌕</span>
+            </div>
+
+
+            <!-- HERO -->
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <h2>
+                        GIFT<br>
+                        HEALTH.<br>
+                        SHARE.<br>
+                        HAPPINESS.
+                    </h2>
+
+                    <p>
+                        Premium Hampers<br>
+                        for Every Occasion.
+                    </p>
+
+                    <button onclick="showPage('detailPage')">
+                        SHOP NOW →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORIES -->
+            <div class="section-header">
+
+                <h2>SHOP BY CATEGORY</h2>
+
+                <span>View All</span>
+
+            </div>
+
+            <div class="categories">
+
+                <div onclick="showPage('datesPage')">
+                    <div class="category-icon">🌿</div>
+                    <p>Dry Fruits</p>
+                </div>
+
+                <div onclick="showPage('datesPage')">
+                    <div class="category-icon">🥜</div>
+                    <p>Dates</p>
+                </div>
+
+                <div>
+                    <div class="category-icon">🎁</div>
+                    <p>Gift Hampers</p>
+                </div>
+
+                <div>
+                    <div class="category-icon">🎀</div>
+                    <p>Combos</p>
+                </div>
+
+            </div>
+
+
+            <!-- BEST SELLERS -->
+            <div class="section-header">
+
+                <h2>BEST SELLERS</h2>
+
+                <span>View All</span>
+
+            </div>
+
+
+            <div class="products" id="productGrid">
+
+                <div
+                    class="product"
+                    data-name="premium royal delight hamper"
+                    onclick="showPage('detailPage')"
+                >
+
+                    <div class="product-image product-one">
+                        <label>Bestseller</label>
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Royal Delight Hamper</h3>
+
+                        <p>₹2,299</p>
+
+                        <span>★★★★★</span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="luxury gift box"
+                    onclick="showPage('detailPage')"
+                >
+
+                    <div class="product-image product-two"></div>
+
+                    <div class="product-info">
+
+                        <h3>Luxury Gift Box</h3>
+
+                        <p>₹1,899</p>
+
+                        <span>★★★★★</span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="dates nuts combo"
+                >
+
+                    <div class="product-image product-three">
+                        <label>Bestseller</label>
+                    </div>
+
+                    <div class="product-info">
+
+                        <h3>Dates & Nuts Combo</h3>
+
+                        <p>₹1,499</p>
+
+                        <span>★★★★★</span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="product"
+                    data-name="royal festive hamper"
+                >
+
+                    <div class="product-image product-four"></div>
+
+                    <div class="product-info">
+
+                        <h3>Royal Festive Hamper</h3>
+
+                        <p>₹2,599</p>
+
+                        <span>★★★★★</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- PRODUCT DETAIL -->
+        <main id="detailPage" class="content-page hidden">
+
+            <div class="page-header">
+
+                <button onclick="showPage('homePage')">←</button>
+
+                <span>PRODUCT DETAIL</span>
+
+                <button>♡</button>
+
+            </div>
+
+
+            <div class="detail-image"></div>
+
+
+            <div class="detail-content">
+
+                <h1>
+                    Premium Royal Delight Hamper
+                </h1>
+
+                <p class="subtitle">
+                    A perfect blend of luxury and health.
+                </p>
+
+                <div class="detail-price">
+                    ₹2,299
+                </div>
+
+                <div class="rating">
+                    ★★★★★ <small>(128)</small>
+                </div>
+
+
+                <div class="features">
+
+                    <div>
+                        <b>♢</b>
+                        Premium<br>Quality
+                    </div>
+
+                    <div>
+                        <b>✧</b>
+                        Handpicked<br>With Care
+                    </div>
+
+                    <div>
+                        <b>🎁</b>
+                        Hygienically<br>Packed
+                    </div>
+
+                    <div>
+                        <b>♔</b>
+                        Perfect for<br>Gifting
+                    </div>
+
+                </div>
+
+
+                <h3>Product Description</h3>
+
+                <p class="description">
+                    A royal assortment of premium dry fruits
+                    and dates, beautifully arranged in a luxury
+                    box. Perfect for gifting your loved ones.
+                </p>
+
+
+                <button
+                    class="gold-btn"
+                    onclick="addToCart()"
+                >
+                    ADD TO CART 🛍
+                </button>
+
+                <button
+                    class="outline-btn"
+                    onclick="buyNow()"
+                >
+                    BUY NOW
+                </button>
+
+            </div>
+
+        </main>
+
+
+        <!-- DATES PAGE -->
+        <main id="datesPage" class="content-page hidden">
+
+            <div class="page-header">
+
+                <button onclick="showPage('homePage')">
+                    ←
+                </button>
+
+                <span>DATES COLLECTION</span>
+
+                <button>☷</button>
+
+            </div>
+
+
+            <div class="filters">
+
+                <button
+                    class="active"
+                    onclick="filterDates('all',this)"
+                >
+                    All Dates
+                </button>
+
+                <button
+                    onclick="filterDates('Ajwa',this)"
+                >
+                    Ajwa
+                </button>
+
+                <button
+                    onclick="filterDates('Medjool',this)"
+                >
+                    Medjool
+                </button>
+
+                <button
+                    onclick="filterDates('Safawi',this)"
+                >
+                    Safawi
+                </button>
+
+                <button
+                    onclick="filterDates('Kalmi',this)"
+                >
+                    Other
+                </button>
+
+            </div>
+
+
+            <div class="date-list">
+
+
+                <div class="date-card" data-date="Ajwa">
+
+                    <div class="date-image ajwa"></div>
+
+                    <div class="date-info">
+
+                        <h3>Ajwa Dates</h3>
+
+                        <small>500g</small>
+
+                        <p>₹699</p>
+
+                        <button onclick="addDate('Ajwa Dates',699)">
+                            ADD 🛍
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="date-card" data-date="Medjool">
+
+                    <div class="date-image medjool"></div>
+
+                    <div class="date-info">
+
+                        <h3>Medjool Dates</h3>
+
+                        <small>500g</small>
+
+                        <p>₹599</p>
+
+                        <button onclick="addDate('Medjool Dates',599)">
+                            ADD 🛍
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="date-card" data-date="Safawi">
+
+                    <div class="date-image safawi"></div>
+
+                    <div class="date-info">
+
+                        <h3>Safawi Dates</h3>
+
+                        <small>500g</small>
+
+                        <p>₹499</p>
+
+                        <button onclick="addDate('Safawi Dates',499)">
+                            ADD 🛍
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="date-card" data-date="Kalmi">
+
+                    <div class="date-image kalmi"></div>
+
+                    <div class="date-info">
+
+                        <h3>Kalmi Dates</h3>
+
+                        <small>500g</small>
+
+                        <p>₹399</p>
+
+                        <button onclick="addDate('Kalmi Dates',399)">
+                            ADD 🛍
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- CART PAGE -->
+        <main id="cartPage" class="content-page hidden">
+
+            <div class="page-header">
+
+                <button onclick="showPage('homePage')">
+                    ←
+                </button>
+
+                <span>MY CART</span>
+
+                <div></div>
+
+            </div>
+
+
+            <div id="cartItems"></div>
+
+
+            <div id="emptyCart" class="empty-cart">
+
+                <div>🛍</div>
+
+                <h2>Your Cart is Empty</h2>
+
+                <p>Add something luxurious.</p>
+
+            </div>
+
+
+            <div id="cartSummary" class="cart-summary hidden">
+
+                <div>
+                    <span>Total</span>
+                    <strong id="totalPrice">₹0</strong>
+                </div>
+
+                <button
+                    class="gold-btn"
+                    onclick="checkout()"
+                >
+                    PROCEED TO CHECKOUT
+                </button>
+
+            </div>
+
+        </main>
+
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav>
+
+            <button
+                class="active"
+                onclick="showPage('homePage')"
+            >
+                <b>⌂</b>
+                Home
+            </button>
+
+            <button
+                onclick="showPage('datesPage')"
+            >
+                <b>▦</b>
+                Categories
+            </button>
+
+            <button onclick="alert('Favorites')">
+                <b>♡</b>
+                Favorites
+            </button>
+
+            <button
+                onclick="showPage('cartPage')"
+            >
+                <b>▢</b>
+                Orders
+            </button>
+
+            <button onclick="alert('Profile')">
+                <b>♙</b>
+                Profile
+            </button>
+
+        </nav>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
